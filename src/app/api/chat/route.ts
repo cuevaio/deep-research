@@ -23,6 +23,9 @@ export async function POST(req: Request) {
 Today's date: ${new Date().toISOString()}`,
     tools: {
       startDeepResearch: startDeepResearchTool,
+      web_search_preview: openai.tools.webSearchPreview({
+        searchContextSize: "medium",
+      }),
     },
   });
 
